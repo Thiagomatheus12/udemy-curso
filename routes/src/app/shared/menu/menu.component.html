@@ -1,1 +1,22 @@
-<p>menu works!</p>
+<header>
+  <nav>
+    <ul>
+      <li>
+        <a routerLink="/" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <!--
+            routerLinkActiveOptions = para utilizar a classe somente no link exato que estiver ativo
+            routerLinkActive = para saber qual link está ativo
+        -->
+      </li>
+      <li>
+        <a routerLink="/sobre" [routerLinkActive]="['active']">Sobre</a>
+      </li>
+      <li>
+        <a routerLink="/dashboard" [routerLinkActive]="['active']">Dashboard</a>
+      </li>
+      <li>
+        <a routerLink="/404" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Error</a>
+      </li>
+    </ul>
+  </nav>
+</header>
