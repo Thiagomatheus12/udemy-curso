@@ -1,0 +1,41 @@
+<form [formGroup]="cadastroForm" (ngSubmit)="submitForm()">
+  <label for="firstName">Nome:
+    <input type="text" formControlName="firstName">
+    <span
+    class="alert"
+     *ngIf="clickForm('firstName')" >
+      Por favor preencha este campo.
+    </span>
+  </label>
+  <br>
+  <br>
+  <label for="lastName">Sobrenome:
+    <input type="text" formControlName="lastName" name="lastName" >
+    <span
+    class="alert"
+     *ngIf="clickForm('lastName')" >
+      Minimo de 5 caracteres
+    </span>
+  </label>
+
+<br>
+<br>
+  <label for="email">Email:
+    <input type="email"  formControlName="email">
+    <span
+    class="alert"
+     *ngIf="clickForm('email')" >
+
+    </span>
+  </label>
+  <br>
+  <br>
+  <p>{{ cadastroForm.get('lastName')?.errors | json}}</p>
+  <!-- <p>{{ cadastroForm.get('firstName')?.value}}</p> -->
+  <!-- <p>{{ cadastroForm.get('firstName')?.errors | json }}</p> -->
+  <p>{{ cadastroForm.get('firstName')?.touched | json }}</p>
+  <p>{{ cadastroForm.get('firstName')?.dirty | json }}</p>
+
+  <button [disabled]="cadastroForm.invalid">Enviar</button>
+
+</form>
